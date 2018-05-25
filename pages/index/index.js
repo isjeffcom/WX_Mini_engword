@@ -78,6 +78,7 @@ Page({
     })*/
   },
 
+  //Display search button when input
   searchWord: function(e){
     boo_clickedSearch = false;
     s_value = e.detail.value;
@@ -99,20 +100,21 @@ Page({
     })
   },
 
+  //Search Function
   searchRequest: function(e){
 
     var that = this;
     var api_salt = Date.parse(new Date());
     var r_value = s_value;
 
-    /*CONVERT SIGN*/
+    /*API Requirement: Convert string*/
     var r_sign_ready = bd_api_appId + r_value + api_salt + bd_api_key;
     var r_sign_finish = md5_module.md5(r_sign_ready);
 
-    /*CONVERT URL*/
+    /*API Requirement: Convert Url*/
     var r_url = bd_api_baseUrl + r_value + db_api_baseUrl_2 + "&salt=" + api_salt + "&sign=" + r_sign_finish
     
-    /*REQUEST*/
+    /*Request Data*/
     wx.request({
       url: r_url,
       data: {
@@ -123,8 +125,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
+        //Return and display data
         var res_dst = res.data.trans_result[0].dst;
-
         boo_clickedSearch = true;
 
         that.setData({
@@ -137,6 +139,7 @@ Page({
     
   },
 
+  //Add new word click listener and animation
   addNewWord: function(e){
     var animation = wx.createAnimation({
       duration: 300,
@@ -226,6 +229,3 @@ Page({
   },
 })
 
-function addBtnTurnBack(){
-  
-}
