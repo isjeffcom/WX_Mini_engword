@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="main">
+  <!--view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view-->
+  <view class="home_container_title">
+
+    <view class="home_container_appTitle">
+      <text class="home_appTitle">单词本</text>
+    </view>
+
+    <view class="home_container_appSubTitle">
+      <text class="home_appSubTitle">搜索单词并添加到生词本</text>
+    </view>
+
+  </view>
+
+  <view class="home_container_searchBar">
+      <view class="home_searchBar">
+        <input placeholder='搜索词汇' placeholder-style="font-size:24rpx;margin-left:8rpx;" bindinput='searchWord'></input>
+
+        <button class="home_searchBar_sbtn" wx:if="{{canSearch}}" bindtap="searchRequest">
+          <text>查询</text>
+        </button>
+      </view>
+  </view>
+
+  <view class="home_container_res_card" wx:if="{{clickedSearch}}">
+    <view class="home_res_card">
+    
+      <view class="home_res_card_inner">
+        <view class="home_res_card_title">
+          <text>释义: </text>
+        </view>
+
+        <view class="home_res_card_dst">
+          <text>{{res_card_dst}}</text>
+        </view>
+
+        <view class="home_res_card_addBtn" bindtap='addNewWord' animation="{{addBtnC_AnimationData}}">
+        
+          <view class="icon_outline_circle" animation="{{addBtnCircle_AnimationData}}">
+            <view class="icon_add_btn_container">
+              <view class="icon_add_btn_vec homeIcAddVec" animation="{{addBtnIcVec_AnimationData}}"></view>
+              <view class="icon_add_btn_hor homeIcAddHor" animation="{{addBtnIcHor_AnimationData}}"></view>
+            </view>
+          </view>
+        
+        </view>
+
+      </view>
+    </view>
+  
+  </view>
+
+</view>

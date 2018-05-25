@@ -1,0 +1,117 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+/*APP TITLE*/
+.home_container_title{
+  margin-top:14rpx;
+  margin-left:5%;
+}
+.home_appTitle{
+  font-weight: bold;
+  font-size:54rpx;
+}
+
+.home_appSubTitle{
+
+  font-weight: bold;
+  font-size:28rpx;
+}
+
+.home_container_appSubTitle{
+    margin-top:-12rpx;
+}
+
+/*SEARCH BAR*/
+.home_container_searchBar{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:100rpx;
+}
+
+
+.home_searchBar{
+  width:90%;
+  border-radius: 6rpx;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 3px 3px rgba(0,0,0,0.1);
+  height:100rpx;
+}
+
+.home_searchBar input{
+  height:90rpx;
+  width:75%;
+  margin-left:32rpx;
+  margin-top:5rpx;
+}
+
+.home_searchBar_sbtn{
+  width:120rpx;
+  height:100rpx;
+  font-size: 24rpx;
+  color:#fff;
+  margin-top:-94rpx;
+  background: #62bbff;
+  border: none;
+  border-radius: 0rpx;
+  position:absolute;
+  right:5%;
+}
+
+/*RESULT CARD*/
+
+.home_container_res_card{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:50rpx;
+}
+
+.home_res_card{
+  width:90%;
+  border-radius: 6rpx;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 3px 3px rgba(0,0,0,0.1);
+  height:400rpx;
+}
+
+.home_res_card_inner{
+  margin-left:24rpx;
+  margin-right:24rpx;
+  margin-top:24rpx;
+  margin-bottom:24rpx;
+}
+
+.home_res_card_title{
+  font-size:48rpx;
+  font-weight:bold;
+}
+
+.home_res_card_dst{
+  font-size:28rpx;
+}
+
+.home_res_card_addBtn{
+  float:right;
+  margin-top:154rpx;
+  margin-right:10rpx;
+}

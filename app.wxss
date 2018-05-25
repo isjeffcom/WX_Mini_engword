@@ -1,0 +1,42 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+
+.icon_outline_circle{
+  height:80rpx;
+  width:80rpx;
+  border-radius: 500rpx;
+  border: 1px solid #fff;
+  background-color:#fff;
+  box-shadow:0 4px 16px rgba(64,252,253,0.08), 0 3px 3px rgba(68,156,255,0.1);
+}
+
+.icon_add_btn_container{
+  margin-left:26rpx;
+  margin-top:25rpx;
+
+
+}
+
+.icon_add_btn_vec{
+  height:30rpx;
+  width:4rpx;
+  background-color:#888;
+  margin-left:15rpx;
+
+}
+
+.icon_add_btn_hor{
+  height:4rpx;
+  width:30rpx;
+  background-color:#888;
+  margin-top:-8px;
+}
