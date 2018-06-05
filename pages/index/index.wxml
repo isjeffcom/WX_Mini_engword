@@ -44,20 +44,83 @@
           <text>{{res_card_dst}}</text>
         </view>
 
-        <view class="home_res_card_addBtn" bindtap='addNewWord' animation="{{addBtnC_AnimationData}}">
+        <!-- <view class="home_res_card_addBtn" bindtap='addNewWord' animation="{{addBtnC_AnimationData}}">
         
           <view class="icon_outline_circle" animation="{{addBtnCircle_AnimationData}}">
+
             <view class="icon_add_btn_container">
+
               <view class="icon_add_btn_vec homeIcAddVec" animation="{{addBtnIcVec_AnimationData}}"></view>
+
               <view class="icon_add_btn_hor homeIcAddHor" animation="{{addBtnIcHor_AnimationData}}"></view>
-            </view>
-          </view>
+            </view> -->
+          <!-- </view>
         
-        </view>
+        </view> -->
 
       </view>
+
+        <!--加入按钮  -->
+      <view class='addBtn'>
+          <view class='addBtn_inner'>
+              <text> + </text>
+              <text> 加入生词本</text>
+          </view>
+      </view>
+
     </view>
   
   </view>
+
+<view class='newWord'>
+    <text class='title'>我的生词本</text>
+
+    <view class='wordListCard'>
+
+      <view class='list'>
+
+        <view class="card {{item.status==0 ? '' : 'packup'}}" wx:for="{{wordList}}" wx:key="{{index}}" data-key='{{index}}'>
+
+          <view class='card_Top'  bindtap='showMore'  data-key='{{index}}'>
+
+            <view class='card_TopLeft' >
+                <text>•</text>
+                <text>{{item.englist}}</text>
+           </view>
+
+            <view class='card_TopRight'>
+                 <text>{{item.chinese_short}}</text>
+                 <image src='./icon/down.png'></image>
+            </view>
+
+          </view>
+
+          <view class='card_Middle'>
+              <view class='example'>
+                  <text>形容词</text>
+                  <text>必要, 必不可少, 必须,根本, 要紧</text>
+              </view>
+
+
+            <view class='example'>
+                  <text>名词</text>
+                  <text>必要, 必不可少, 必须,根本, 要紧</text>
+              </view>
+          </view>
+
+          <view class='card_Bottom'>
+            <view class='clean'>
+                  <text>记住了</text>
+                  <image src='./icon/cut.png'></image>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+</view>
+
 
 </view>

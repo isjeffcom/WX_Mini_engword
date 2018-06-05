@@ -95,6 +95,7 @@
 }
 
 .home_res_card{
+  position: relative;
   width:90%;
   border-radius: 6rpx;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 3px 3px rgba(0,0,0,0.1);
@@ -102,6 +103,7 @@
 }
 
 .home_res_card_inner{
+  position: relative;
   margin-left:24rpx;
   margin-right:24rpx;
   margin-top:24rpx;
@@ -122,3 +124,184 @@
   margin-top:154rpx;
   margin-right:10rpx;
 }
+
+/*upload by dubinbin  2018.6.5 */
+.home_res_card .addBtn{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #57A7FF;
+  height: 88rpx;
+  box-shadow:0px 2px 6px #57A7FF;
+  cursor: pointer;
+}
+.home_res_card .addBtn text{
+  display: flex;
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  height: 88rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBtn .addBtn_inner{
+  width: 36%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.home_res_card .addBtn text:nth-child(1) {
+  float: left;
+  font-size: 30px;
+}
+.newWord{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom:50rpx;
+}
+.newWord .title{
+  display: block;
+  margin-top: 44rpx;
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+}
+
+.newWord .wordListCard{
+  margin-top: 10rpx;
+}
+.newWord .wordListCard .card{
+  box-shadow: 0px 2px 4px #D1D1D1;
+  padding:18rpx 23rpx 8rpx 23rpx;
+  height: 36px;
+  overflow: hidden;
+  margin-top:20px;
+}
+.takeBack{
+    animation: takeBack 1s forwards;
+    animation-timing-function: ease;
+}
+.packup{
+    animation: packup 1s forwards;
+    animation-timing-function: ease;
+}
+@keyframes packup {
+    from {
+      height:36px;
+      overflow: hidden;
+  }
+   to {
+      height: 200px;
+      overflow: none;
+  }
+}
+
+@keyframes takeBack {
+    from {
+    height:200px;
+    overflow: none; 
+  }
+   to {
+    height: 36px;
+    overflow: none;
+  }
+}
+
+.wordListCard .card_Top{
+  display:flex;
+  height: 30px;
+  position: relative;
+}
+.wordListCard .card_TopLeft{
+  display:flex;
+  float: left;
+}
+.wordListCard .card_TopLeft text:nth-child(1){
+  display: flex;
+  align-items: center;
+  color: #57A7FF;
+  float: left;
+}
+.wordListCard .card_TopLeft text:nth-child(2){
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  margin-left: 16rpx;
+  font-size: 16px;
+}
+
+.wordListCard .card_TopRight{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+.wordListCard .card_TopRight text{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  float:left;
+  margin-right: 16rpx;
+}
+.wordListCard .card_TopRight image{
+  display: flex;
+  align-items: center;
+  width: 30rpx;
+  height: 30rpx;
+}
+.wordListCard .card_Bottom {
+  position: relative;
+  margin-top:20rpx;
+  height: 100rpx;
+}
+
+.wordListCard .card_Bottom .clean{
+  display:flex;
+  align-items:center;
+  position:absolute;
+  right:0;
+  background: #F4F4F4;
+  border-radius: 16px;
+  padding:8px 20px 8px 20px;
+}
+
+.wordListCard .card_Bottom text{
+  display:flex;
+  align-items:center;
+  font-size:16px;
+  float:left;
+  margin-right:16rpx;
+  opacity:0.4;
+}
+
+.wordListCard .card_Bottom image{
+  display: flex;
+  align-items: center;
+  width: 30rpx;
+  height: 30rpx;
+  opacity:0.4;
+}
+.wordListCard .card_Middle{
+  margin-left: 5%;
+  width: 70%;
+}
+.wordListCard .card_Middle .example{
+  margin-top: 25rpx;
+}
+.wordListCard .card_Middle .example text{
+  font-size: 16px;
+}
+.wordListCard .card_Middle .example text:nth-child(1){
+  opacity:0.4;
+  margin-right: 20rpx;
+  display: flex;
+  float:left;
+}
+.wordListCard .card_Middle .example text:nth-child(2){
+  display: flex;
+  margin-left: 25%;
+}
+
+

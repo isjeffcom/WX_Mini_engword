@@ -32,6 +32,38 @@ Page({
     canSearch: boo_canSearch,
     clickedSearch: boo_clickedSearch,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+  //  意淫假数据
+    wordList:
+    [
+      {
+          "englist":"excited",
+          "chinese_short":"使人长寿的",
+           cateory: {
+             "mingci":"哈哈哈实例文字",
+             "dongci":"实例文字实例文字实例文字"
+          },
+          "status":'0'
+      },
+      {
+        "englist": "essential",
+        "chinese_short": "使人续命的",
+        cateory: {
+          "mingci": "哈哈哈实例文字",
+          "dongci": "实例文字实例文字实例文字"
+        },
+        "status": '0'
+      },
+      {
+        "englist": "erder",
+        "chinese_short": "长者",
+        cateory: {
+          "mingci": "哈哈哈实例文字",
+          "dongci": "实例文字实例文字实例文字"
+        },
+        "status": '0'
+      },
+    ]
+
 
   },
   //事件处理函数
@@ -227,5 +259,12 @@ Page({
     
 
   },
+  showMore:function(e) {
+    var index = e.currentTarget.dataset.key;
+    this.data.wordList[index].status == 0 ? this.data.wordList[index].status = 1 : this.data.wordList[index].status = 0 ;
+    this.setData ({
+      wordList: this.data.wordList
+    })
+  }
 })
 
