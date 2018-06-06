@@ -37,7 +37,7 @@
 }
 
 .home_container_appSubTitle{
-    margin-top:-12rpx;
+    margin-top:32rpx;
 }
 
 /*SEARCH BAR*/
@@ -46,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top:100rpx;
+  margin-top:50rpx;
 }
 
 
@@ -55,6 +55,8 @@
   border-radius: 6rpx;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 3px 3px rgba(0,0,0,0.1);
   height:100rpx;
+  float:left;
+  display:flex;
 }
 
 .home_searchBar input{
@@ -65,17 +67,29 @@
 }
 
 .home_searchBar_sbtn{
-  width:120rpx;
+  display: flex;
+  width:15%;
   height:100rpx;
   font-size: 24rpx;
   color:#fff;
-  margin-top:-94rpx;
-  background: #62bbff;
+  background: #62bbff; 
   border: none;
   border-radius: 0rpx;
   position:absolute;
   right:5%;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 2px 8px #57A7FF;
+
 }
+.home_searchBar_sbtn image{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+button[class="home_searchBar_sbtn"]::after {
+  border: 0;
+} 
 
 .home_searchBar_sbtn text{
    display: flex;
@@ -187,20 +201,51 @@
     animation: packup 1s forwards;
     animation-timing-function: ease;
 }
+
+.rotate {
+   animation: rotate 800ms forwards;
+   animation-timing-function: ease;
+}
+.rotateback {
+    animation: rotateback 800ms forwards;
+   animation-timing-function: ease; 
+}
+/* .arrow{
+    transform:rotate(270deg);
+} */
+
+@keyframes rotate {
+    from {
+      transform:rotate(0deg);
+  }
+   to {
+      transform:rotate(90deg);
+  }
+}
+
+@keyframes rotateback {
+    from {
+      transform:rotate(90deg);
+  }
+   to {
+      transform:rotate(0deg);
+  }
+}
+
 @keyframes packup {
     from {
       height:36px;
       overflow: hidden;
   }
    to {
-      height: 200px;
+      height: auto;
       overflow: none;
   }
 }
 
 @keyframes takeBack {
     from {
-    height:200px;
+    height:auto;
     overflow: none; 
   }
    to {

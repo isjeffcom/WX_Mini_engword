@@ -13,7 +13,7 @@
   <view class="home_container_title">
 
     <view class="home_container_appTitle">
-      <text class="home_appTitle">单词本</text>
+      <!-- <text class="home_appTitle">单词本</text> -->
     </view>
 
     <view class="home_container_appSubTitle">
@@ -27,7 +27,7 @@
         <input placeholder='搜索词汇' placeholder-style="font-size:24rpx;margin-left:8rpx;" bindinput='searchWord'></input>
 
         <button class="home_searchBar_sbtn" wx:if="{{canSearch}}" bindtap="searchRequest">
-          <text>查询</text>
+        <image src='./icon/right.png' class="{{!clickedSearch ? '' : 'rotate'}}"></image>
         </button>
       </view>
   </view>
@@ -62,7 +62,7 @@
 
         <!--加入按钮  -->
       <view class='addBtn'>
-          <view class='addBtn_inner'>
+          <view class='addBtn_inner' bindtap='addToWordList'>
               <text> + </text>
               <text> 加入生词本</text>
           </view>
@@ -90,7 +90,7 @@
 
             <view class='card_TopRight'>
                  <text>{{item.chinese_short}}</text>
-                 <image src='./icon/down.png'></image>
+                 <image class="arrow {{item.status==0 ? 'rotateback' : 'rotate'}}" src='./icon/down.png'></image>
             </view>
 
           </view>
@@ -109,7 +109,7 @@
           </view>
 
           <view class='card_Bottom'>
-            <view class='clean'>
+            <view class='clean' bindtap='closeWord' data-key='{{index}}'>
                   <text>记住了</text>
                   <image src='./icon/cut.png'></image>
             </view>

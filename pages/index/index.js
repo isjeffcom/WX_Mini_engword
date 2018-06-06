@@ -23,6 +23,7 @@ Page({
     motto: 'Hello World',
     res_card_dst: '网络错误',
     userInfo: {},
+    searchwhichWord:'',
     addBtnC_AnimationData: {},
     addBtnIcVec_AnimationData:{},
     addBtnIcHor_AnimationData:{},
@@ -116,7 +117,7 @@ Page({
     s_value = e.detail.value;
 
     this.setData({
-      
+      searchwhichWord: s_value
     })
     if(s_value.length > 1){
       boo_canSearch = true;
@@ -138,6 +139,9 @@ Page({
     var that = this;
     var api_salt = Date.parse(new Date());
     var r_value = s_value;
+    wx.showLoading({
+      title: '拼命查询中',
+    })
 
     /*API Requirement: Convert string*/
     var r_sign_ready = bd_api_appId + r_value + api_salt + bd_api_key;
@@ -165,6 +169,7 @@ Page({
           res_card_dst: res_dst,
           clickedSearch: boo_clickedSearch,
         })
+        wx.hideLoading()
       }
     })
 
@@ -259,6 +264,43 @@ Page({
     
 
   },
+
+  closeWord:function(e) {
+    var index = e.currentTarget.dataset.key;
+    this.data.wordList.splice(index,1)
+    this.setData({
+      wordList: this.data.wordList
+    })
+  },
+
+  addToWordList:function() {
+     var listLength = this.data.wordList;
+     for (let i = 0, len = listLength.length; i < len; i++){
+       if (listLength[i].englist == this.data.searchwhichWord){
+          wx.showModal({
+            title: '提示',
+            content: '您添加的单词与生词本重复',
+            showCancel:false,
+          })
+           return 
+       }
+     }
+
+      var newWord = {
+          "englist": this.data.searchwhichWord,
+          "chinese_short": this.data.res_card_dst,
+          cateory: {
+            "mingci": "哈哈哈实例文字",
+            "dongci": "实例文字实例文字实例文字"
+          },
+          "status": '1'
+      }
+      this.data.wordList.splice(0, 0, newWord)
+      this.setData({
+        wordList: this.data.wordList
+      })
+  },
+
   showMore:function(e) {
     var index = e.currentTarget.dataset.key;
     this.data.wordList[index].status == 0 ? this.data.wordList[index].status = 1 : this.data.wordList[index].status = 0 ;
