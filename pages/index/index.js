@@ -140,7 +140,7 @@ Page({
     var api_salt = Date.parse(new Date());
     var r_value = s_value;
     wx.showLoading({
-      title: '拼命查询中',
+      title: '正在查询中',
     })
 
     /*API Requirement: Convert string*/
@@ -178,87 +178,12 @@ Page({
 
   //Add new word click listener and animation
   addNewWord: function(e){
-    var animation = wx.createAnimation({
-      duration: 300,
-      timingFunction: 'ease',
-    })
-
-    var animation_2 = wx.createAnimation({
-      duration: 300,
-      timingFunction: 'ease',
-    })
-
-    this.animation = animation;
 
     if(addNewBtn_state == true){
-      
-      animation.scale(1.2, 1.2).rotate(60).step();
-
-      this.setData({
-        addBtnC_AnimationData: animation.export(),
-      });
-
-      setTimeout(function () {
-        animation.width(6).rotate(180).step()
-        this.setData({
-          addBtnIcHor_AnimationData: animation.export(),
-        })
-        setTimeout(function () {
-          animation.translateX(-3).translateY(-5).backgroundColor("#ffffff").step()
-          this.setData({
-            addBtnIcHor_AnimationData: animation.export(),
-          })
-          setTimeout(function () {
-            animation.translateY(1).translateX(-1).width(2).backgroundColor("#ffffff").step()
-            this.setData({
-              addBtnIcVec_AnimationData: animation.export(),
-            })
-            setTimeout(function () {
-              animation_2.backgroundColor("#62bbff").step()
-
-              this.setData({
-                addBtnCircle_AnimationData: animation_2.export(),
-              })
-            }.bind(this), 10)
-          }.bind(this), 10)
-        }.bind(this), 10)
-      }.bind(this), 10)
 
       addNewBtn_state = false;
 
     }else{
-      animation.scale(1, 1).rotate(0).step();
-
-      this.setData({
-        addBtnC_AnimationData: animation.export(),
-      });
-
-      setTimeout(function () {
-        animation.width(6).rotate(180).step()
-        this.setData({
-          addBtnIcHor_AnimationData: animation.export(),
-        })
-        setTimeout(function () {
-          animation.translateX(-1.5).translateY(1.5).width(15).backgroundColor("#888").step()
-          this.setData({
-            addBtnIcHor_AnimationData: animation.export(),
-          })
-          setTimeout(function () {
-            animation.translateY(1).translateX(-1).width(2).backgroundColor("#888").step()
-            this.setData({
-              addBtnIcVec_AnimationData: animation.export(),
-            })
-            setTimeout(function () {
-              animation_2.backgroundColor("#fff").step()
-
-              this.setData({
-                addBtnCircle_AnimationData: animation_2.export(),
-              })
-            }.bind(this), 10)
-          }.bind(this), 10)
-        }.bind(this), 10)
-      }.bind(this), 10)
-
       addNewBtn_state = true
     }
     

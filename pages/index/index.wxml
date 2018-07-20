@@ -13,7 +13,7 @@
   <view class="home_container_title">
 
     <view class="home_container_appTitle">
-      <!-- <text class="home_appTitle">单词本</text> -->
+      <text class="home_appTitle">单词本</text>
     </view>
 
     <view class="home_container_appSubTitle">

@@ -1,0 +1,44 @@
+/* pages/wordtest/wordtest.wxss */
+.main{
+  height:100%;
+  width:100%;
+  position:fixed;
+  background-color:#1B9CFF;
+}
+
+.wt_main_word{
+  color:#ffffff;
+  font-size: 64rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top:160rpx;
+}
+
+.wt_options{
+  margin-top:40rpx;
+  margin-left:40rpx;
+}
+
+.wt_option_single{
+  margin-bottom:30rpx;
+  width:95%;
+  height:60px;
+  font-size: 36rpx;
+  font-weight: bold;
+  background-color: #1D8BE0;
+  color:#ffffff;
+}
+
+.wtOS_r{
+  background-color: #1ED866;
+}
+
+.wtOS_w{
+  background-color: #D81E1E;
+}
+
+.wt_option_single_content{
+  margin-left:40rpx;
+  padding-top:30rpx;
+
+}

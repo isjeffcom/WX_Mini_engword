@@ -1,0 +1,27 @@
+<!--pages/wordtest/wordtest.wxml-->
+<view class="main">
+  <view class="wt_main_word">
+    <text>- </text>
+    <text>Word</text>
+    <text> -</text>
+  </view>
+
+  <view class="wt_options">
+
+    <view class="wt_option_single_container" wx:for="{{w_data}}">
+      <view class="wt_option_single {{item.wid==wtOS_cid?'wtOS_r':''}}" bindtap="checkWord" data-wid="{{item.wid}}">
+        <view class="wt_option_single_content" >
+          <text>{{item.word}}</text>
+        </view>
+      </view>
+
+    </view>
+
+    
+
+
+
+
+  </view>
+  
+</view>
