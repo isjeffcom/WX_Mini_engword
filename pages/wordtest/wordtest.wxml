@@ -24,7 +24,7 @@
       </view>
 
 
-     <view class="wt_option_single wtOS_w" wx:if="{{ index!==rightAnswers && item.isClick!==''}}">
+     <view class="wt_option_single wtOS_w" wx:if="{{ index!==rightAnswers && item.isClick!=='' }}">
           <view class="wt_option_single_content">
             <text>{{item.word}}+这是错的</text>
          </view>

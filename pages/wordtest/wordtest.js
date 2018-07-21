@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    rightAnswers: 2,
+    rightAnswers: 0,
+    showTheRightAnswer:false,
     clikeID:'',
     w_data:[
       {
@@ -87,13 +88,33 @@ Page({
   
   },
 
-  checkWord: function(e){
-    var index = e.currentTarget.dataset.key;
-    var arr = this.data.w_data;
+  checkWord: function(event){
+    var _that = this;
+    if (_that.data.showTheRightAnswer){
+      return null
+    }
+    var index = event.currentTarget.dataset.key;
+    var arr = _that.data.w_data;
     arr[index].isClick = '1'
-    this.setData({
+    _that.setData({
       clikeID:index,
       w_data : arr,
+    },function(){
+      _that.setData({
+        showTheRightAnswer: true,
+      })
+      if (_that.data.clikeID === _that.data.rightAnswers) {
+          console.log("答对了")
+      }else{
+        //1.5s内后出正确答案
+        setTimeout(function () {
+          console.log('答错了')
+          arr[_that.data.rightAnswers].isClick = '1'
+          _that.setData({
+            w_data: arr,
+          })
+        }, 1500)   
+      }
     })
   }
 })
