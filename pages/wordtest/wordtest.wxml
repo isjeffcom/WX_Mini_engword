@@ -8,19 +8,29 @@
 
   <view class="wt_options">
 
-    <view class="wt_option_single_container" wx:for="{{w_data}}">
-      <view class="wt_option_single {{item.wid==wtOS_cid?'wtOS_r':''}}" bindtap="checkWord" data-wid="{{item.wid}}">
-        <view class="wt_option_single_content" >
-          <text>{{item.word}}</text>
-        </view>
+    <view class="wt_option_single_container" wx:for="{{w_data}}" wx:key="{{index}}" data-key="{{index}}" bindtap='checkWord'>
+
+     
+      <view class="wt_option_single" wx:if="{{index!==clikeID && item.isClick==''}}">
+          <view class="wt_option_single_content">
+            <text>{{item.word}}</text>
+         </view>
+      </view>
+
+     <view class="wt_option_single wtOS_r" wx:if="{{ index===rightAnswers && item.isClick!==''}}">
+          <view class="wt_option_single_content">
+            <text>{{item.word}}+这是对的</text>
+         </view>
+      </view>
+
+
+     <view class="wt_option_single wtOS_w" wx:if="{{ index!==rightAnswers && item.isClick!==''}}">
+          <view class="wt_option_single_content">
+            <text>{{item.word}}+这是错的</text>
+         </view>
       </view>
 
     </view>
-
-    
-
-
-
 
   </view>
   

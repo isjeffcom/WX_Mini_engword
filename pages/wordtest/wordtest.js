@@ -1,4 +1,3 @@
-var currentWid=1;
 // pages/wordtest/wordtest.js
 Page({
   
@@ -6,25 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
+    rightAnswers: 2,
+    clikeID:'',
     w_data:[
       {
         word: "单词",
-        wid: 1,
+        isClick:'',
       },
 
       {
         word: "火灾",
-        wid: 2,
+        isClick: '',
       },
 
       {
-        word: "从今往后",
-        wid: 3,
+        word: "从今往后", 
+        isClick: '',
       },
 
       {
         word: "赛艇",
-        wid: 4,
+        isClick: '',
       },
     ],
     
@@ -87,20 +88,12 @@ Page({
   },
 
   checkWord: function(e){
-    var wid = e.currentTarget.dataset.wid;
+    var index = e.currentTarget.dataset.key;
+    var arr = this.data.w_data;
+    arr[index].isClick = '1'
     this.setData({
-      wtOS_cid: currentWid,
+      clikeID:index,
+      w_data : arr,
     })
-
-
-    //绑定选定的id，用于前端样式变化的渲染
-
-    if (wid == currentWid){
-
-      console.log("Right" + " " +e.currentTarget.dataset.wid);
-    }else{
-
-      console.log(e.currentTarget.dataset.wid)
-    }
   }
 })
