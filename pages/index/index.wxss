@@ -183,6 +183,15 @@ button[class="home_searchBar_sbtn"]::after {
   font-weight: 400;
 }
 
+.newWord_title{
+  display:block;
+  margin-top:44rpx;
+  font-size:14px;
+  color:#000;
+  font-weight:400;
+
+}
+
 .newWord .wordListCard{
   margin-top: 10rpx;
 }
@@ -193,6 +202,16 @@ button[class="home_searchBar_sbtn"]::after {
   overflow: hidden;
   margin-top:20px;
 }
+
+.newWord_toTest{
+  position:absolute;
+  right:40rpx;
+  font-size:14px;
+  font-weight: bold;
+  margin-top:-32rpx;
+  color:#57A7FF;
+}
+
 .takeBack{
     animation: takeBack 1s forwards;
     animation-timing-function: ease;
@@ -348,5 +367,6 @@ button[class="home_searchBar_sbtn"]::after {
   display: flex;
   margin-left: 25%;
 }
+
 
 

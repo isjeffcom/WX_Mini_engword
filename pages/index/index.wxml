@@ -73,7 +73,15 @@
   </view>
 
 <view class='newWord'>
+  <view class="newWord_title">
     <text class='title'>我的生词本</text>
+    
+  </view>
+
+  <view class="newWord_toTest">
+    <text class='toTest' bindtap="toTest">背诵单词</text>
+  </view>
+    
 
     <view class='wordListCard'>
 

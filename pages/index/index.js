@@ -73,6 +73,13 @@ Page({
       url: '../logs/logs'
     })
   },
+
+  //事件处理函数
+  toTest: function () {
+    wx.navigateTo({
+      url: '../wordtest/wordtest'
+    })
+  },
   onLoad: function () {
     console.log(this.data.canSearch)
     /*if (app.globalData.userInfo) {
