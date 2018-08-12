@@ -17,6 +17,8 @@ var addNewBtn_state = true;
 
 var s_value;
 
+var wordsData = wx.getStorageSync('local_words') || []
+
 
 Page({
   data: {
@@ -33,39 +35,9 @@ Page({
     canSearch: boo_canSearch,
     clickedSearch: boo_clickedSearch,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-  //  意淫假数据
-    wordList:
-    [
-      {
-          "englist":"excited",
-          "chinese_short":"使人长寿的",
-           cateory: {
-             "mingci":"哈哈哈实例文字",
-             "dongci":"实例文字实例文字实例文字"
-          },
-          "status":'0'
-      },
-      {
-        "englist": "essential",
-        "chinese_short": "使人续命的",
-        cateory: {
-          "mingci": "哈哈哈实例文字",
-          "dongci": "实例文字实例文字实例文字"
-        },
-        "status": '0'
-      },
-      {
-        "englist": "erder",
-        "chinese_short": "长者",
-        cateory: {
-          "mingci": "哈哈哈实例文字",
-          "dongci": "实例文字实例文字实例文字"
-        },
-        "status": '0'
-      },
-    ]
 
-
+    //主要数据
+    wordList:wordsData,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -168,6 +140,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
+        console.log(res);
         //Return and display data
         var res_dst = res.data.trans_result[0].dst;
         boo_clickedSearch = true;
@@ -187,9 +160,7 @@ Page({
   addNewWord: function(e){
 
     if(addNewBtn_state == true){
-
       addNewBtn_state = false;
-
     }else{
       addNewBtn_state = true
     }
@@ -211,26 +182,30 @@ Page({
        if (listLength[i].englist == this.data.searchwhichWord){
           wx.showModal({
             title: '提示',
-            content: '您添加的单词与生词本重复',
+            content: '已经添加过这个单词了',
             showCancel:false,
           })
            return 
        }
      }
 
-      var newWord = {
-          "englist": this.data.searchwhichWord,
-          "chinese_short": this.data.res_card_dst,
-          cateory: {
-            "mingci": "哈哈哈实例文字",
-            "dongci": "实例文字实例文字实例文字"
-          },
-          "status": '1'
-      }
-      this.data.wordList.splice(0, 0, newWord)
-      this.setData({
-        wordList: this.data.wordList
-      })
+    //准备数据
+    var newWord = {
+        "englist": this.data.searchwhichWord,
+        "chinese_short": this.data.res_card_dst,
+        "status": '0'
+    }
+
+    //设置当页显示
+    this.data.wordList.splice(0, 0, newWord)
+    this.setData({
+      wordList: this.data.wordList
+    })
+
+    //设置本地储存
+    wordsData.push(newWord);
+    wx.setStorageSync('local_words', wordsData)
+
   },
 
   showMore:function(e) {
